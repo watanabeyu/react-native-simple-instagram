@@ -1,6 +1,6 @@
 {
   "name": "react-native-simple-instagram",
-  "version": "2.0.1",
+  "version": "1.0.0",
   "description": "Instagram API client for React Native without react-native link",
   "main": "index.js",
   "scripts": {
