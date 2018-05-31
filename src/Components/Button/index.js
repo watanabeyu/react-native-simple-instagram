@@ -6,6 +6,7 @@ import {
   TouchableWithoutFeedback,
   Modal,
   WebView,
+  NativeModules,
 } from 'react-native';
 
 /* npm */
@@ -22,6 +23,7 @@ export default class InstagramLoginButton extends React.Component {
   static defaultProps = {
     type: 'TouchableOpacity',
     headerColor: '#f7f7f7',
+    clearCookies: false,
     callbackUrl: null,
     responseType: 'token', // code or token
     scope: ['basic', 'public_content'],
@@ -132,6 +134,10 @@ export default class InstagramLoginButton extends React.Component {
   }
 
   onButtonPress = async (e) => {
+    if (this.props.clearCookies) {
+      NativeModules.Networking.clearCookies(() => { });
+    }
+
     await this.props.onPress(e);
 
     this.setState({

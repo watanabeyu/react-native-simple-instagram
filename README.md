@@ -23,12 +23,13 @@ npm install react-native-simple-instagram --save
 ## Demo
 ![demo gif](extras/demo.gif)
 
-## TWLoginButton props
+## InstagramLoginButton props
 
 | Name | Type| Default | Description |
 | --- | --- | --- | --- |
 | type | string | TouchableOpacity | TouchableOpacity or TouchableHighlight or TouchableWithoutFeedback |
 | children | React.Component |  |  |
+| clearCookies | bool | false | clear WebView cookies |
 | callbackUrl | string(required) | null | Instagram application callback url |
 | responseType | string | token | token or code. if responseType === token, requires clientSecret. |
 | scope | array | ['basic','public_content'] | check this [document](https://www.instagram.com/developer/authorization/) | 
