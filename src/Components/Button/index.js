@@ -58,6 +58,10 @@ export default class InstagramLoginButton extends React.Component {
       const match = webViewState.url.match(/\?code=(.+)/);
 
       if (match && match.length > 0) {
+        this.setState({
+          isVisible: false,
+        });
+
         /* get access token */
         try {
           const response = await instagram.getAccessToken(match[1]);
@@ -100,6 +104,10 @@ export default class InstagramLoginButton extends React.Component {
       const match = webViewState.url.match(/#access_token=(.+)/);
 
       if (match && match.length > 0) {
+        this.setState({
+          isVisible: false,
+        });
+
         const token = match[1];
         this.token = token;
 
